@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" type="text/css" href="myStyleRocks.css">
+    <style>
+        .slideshow{
+            list-style-type: none;
+        }
+        ul.slideshow li{
+            width:535px;
+            margin-left: auto;
+            margin-right: auto;
+            display: none;
+        }
+        #visible{
+            display:block;
+        }
+        #previous{
+            position:absolute;
+            top: 525px;
+            font-size: 50px;
+            
+        }
+        #next{
+            position:absolute;
+            top: 525px;
+            right:0px;
+            font-size: 50px;
+        }
+    </style>    
+    </head>
+    <body>
+        <div class="navigation">
+            <ul>
+                <li><a href="home.html">home</a></li>
+                <li><a href="history.html">history</a></li>
+                <li><span class="currentpage">places</span></li>
+                <li><a href="photos.html">photos</a></li>
+                <li><a href="references.html">references</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h1>Monuments</h1>
+
+            <p>
+                Among the numerous monuments of particular interest in the city are those from the Roman period, the Triumphal Arch of Galerius and the Rotonda. Thessaloniki is, however, above all famous for its Byzantine period, being second only to Constantinople itself. Its many churches whose fine mosaics and wall-paintings are representative of various periods of Byzantine art have survive to enhance the image of the city. One of the most beautiful church is that of Agia Sofia. Large sections of the city-walls are also still standing, together with one of their main bastions, the well-known White Tower.
+            </p>
+
+            <h2>Other places to visit</h2>
+
+            <p>
+                For a combination of shopping and sightseeing we recomment you visit the Ladadika area. In addition you may enjoy a walk on the famous Aristotelous str.
+            </p>
+            <p>
+                For a more cultural outing try to book a seat at the Concert Hall, or if it is Early September that you visit the city, visit the Helexpo.
+            </p>
+        <ul class="slideshow">
+            <li class="slideshowItem" style="display:block">
+                <h3>Agia Sofia</h3>
+                <img src="photos/AgSofia.jpg">
+            </li>
+            <li class="slideshowItem">
+                <h3>The arch and Rotonda</h3>
+                <img src="photos/ArchAndRotonda.jpg">
+            </li>
+            <li class="slideshowItem">
+                <h3>Aristotelous</h3>
+                <img src="photos/AristotelouSq.jpg">
+            </li>
+            <li class="slideshowItem">
+                <h3>Concert Hall</h3>
+                <img src="photos/ConcertHall.jpg">
+            </li>
+            <li class="slideshowItem">
+                <h3>Helexpo</h3>
+                <img src="photos/Helexpo.jpg">
+            </li>
+            <li class="slideshowItem">
+                <h3>Ladadika</h3>
+                <img src="photos/Ladadika.jpg">
+            </li>
+            <li class="slideshowItem">
+                <h3>The Rotonda</h3>
+                <img src="photos/rotonda.jpg">
+            </li>
+            <li class="slideshowItem">
+                <h3>The City Walls</h3>
+                <img src="photos/Walls.jpg">
+            </li>
+            <li class="slideshowItem">
+                <h3>The White Tower</h3>
+                <img src="photos/WhiteTower.jpg">
+            </li>
+        </ul>
+        <a id="previous">&lt;</a>
+        <a id="next">&gt;</a>
+        <br><br><br><br><br><br>
+        </div>
+        <div class="footer">
+            <h4>Created by the I2WT team, 2020.</h4>
+        </div>
+        <script>
+            var showingPlace = 0
+            var slideshowItemEls = document.getElementsByClassName("slideshowItem");
+            for(var i=0; i<slideshowItemEls.length; i++){
+                console.log(slideshowItemEls[i].innerHTML);
+                
+            }
+            slideshowItemEls[showingPlace].style.display="block";
+            var nextPlace = function(){
+                slideshowItemEls[showingPlace].style.display="none";
+                showingPlace +=1;
+                if(showingPlace===slideshowItemEls.length){
+                    showingPlace=0;
+                }
+                slideshowItemEls[showingPlace].style.display="block";
+            }
+            var nextPlaceArrowEl = document.getElementById("next");
+            nextPlaceArrowEl.addEventListener("click", nextPlace);
+            
+            var previousPlace = function(){
+                slideshowItemEls[showingPlace].style.display="none";
+                showingPlace -=1;
+                if(showingPlace<0){
+                    showingPlace=slideshowItemEls.length -1;
+                }
+                slideshowItemEls[showingPlace].style.display="block";
+            }
+            var previousPlaceArrowEl = document.getElementById("previous");
+            previousPlaceArrowEl.addEventListener("click", previousPlace);
+        </script>
+    </body>
+</html>

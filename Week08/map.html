@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="myStyleRocks.css">
+		<style>
+			iframe{width:162px; height:120px;}
+		</style>
+	</head>
+	<body>
+		<div id="navigation">
+			<!--leave empty for now-->
+		</div>
+		<div id="content">
+			<!--the map image and an iframe-->
+			<img src="graphics/map.jpg" usemap="#thesmap">
+			<iframe src="" name="thesframe"></iframe>
+			<!--create a map with 1 area (rect) for the music hall and link it to the image-->
+			<map name="thesmap">
+				<area shape="rect" coords="565,317,578,343" alt="consert hall" href="photos/ConcertHall_tn.jpg" target="thesframe">
+				<!--add area for the white tower-->
+				<area shape="rect" coords="334,153,348,165" alt="white tower" href="photos/WhiteTower_tn.jpg" target="thesframe">
+			</map>
+		</div>
+		<div id="footer">
+			<!--place the text for the footer copied from the other pages-->
+			<h4>Created by the I2WT team, 2020.</h4>
+		</div>
+		
+	</body>
+</html>
